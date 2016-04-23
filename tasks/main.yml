@@ -1,14 +1,17 @@
 ---
 - name: Add google chrome repo key
+  become: True
   apt_key:
     url: 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
    
 - name: Add google chrome repo
+  become: True
   apt_repository:
     repo: 'deb http://dl.google.com/linux/chrome/deb/ stable main'
     update_cache: yes
 
 - name: Install google chrome
+  become: True
   apt:
     name: 'google-chrome-stable'
 
